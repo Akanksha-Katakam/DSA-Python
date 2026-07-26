@@ -1,0 +1,17 @@
+def first_duplicate(arr,target):
+    left=0
+    right=len(arr)-1
+    answer=-1
+    while left<=right:
+        mid=(left+right)//2
+        if arr[mid]==target:
+            answer=mid
+            left=mid+1
+        elif arr[mid]<target:
+            left=mid+1
+        else:
+            right=mid-1
+    return answer
+arr=[1,1,2,2,2,3,3,3,4,5,6]
+target=3
+print(first_duplicate(arr,target))
